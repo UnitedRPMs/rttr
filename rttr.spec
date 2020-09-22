@@ -54,12 +54,12 @@ dos2unix README.md
     -DBUILD_EXAMPLES=OFF \
     -DBUILD_UNIT_TESTS=OFF \
     -DCMAKE_INSTALL_LIBDIR=%{_lib} \
-    -DBUILD_PACKAGE=OFF 
+    -DBUILD_PACKAGE=OFF .
 
-%make_build
+%cmake_build
 
 %install
-%make_install 
+%cmake_install 
 
 # Move doc into system dir
 mv -f %{buildroot}/usr/doc %{buildroot}/%{_datadir}/
